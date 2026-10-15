@@ -16,12 +16,13 @@
             height: 100%;
             width: 100%;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #ffffff;
-            color: #2c3e50;
+            background: #1a1a1a;
+            color: #e5e5e5;
         }
 
         main {
             display: flex;
+            flex-direction: column;
             height: 100%;
             align-items: center;
             justify-content: center;
@@ -34,109 +35,128 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            width: 100%;
         }
 
         .logo-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2.5rem;
-            background: #f8f8f8;
-            border-radius: 16px;
+            padding: 3rem;
+            background: #2d2d2d;
+            border-radius: 24px;
             text-decoration: none;
             cursor: pointer;
-            transition: background-color 0.15s ease, outline 0.15s ease;
+            transition: background-color 0.15s ease, transform 0.15s ease, outline 0.15s ease;
             border: 2px solid transparent;
+            width: 100%;
+            max-width: 600px;
+            aspect-ratio: 1.2;
         }
 
         .logo-link:hover {
-            background: #efefef;
+            background: #363636;
+            transform: scale(1.02);
         }
 
         .logo-link:focus {
-            outline: 3px solid #2c3e50;
+            outline: 3px solid #4a9eff;
             outline-offset: 6px;
         }
 
         .logo-link:active {
-            background: #e8e8e8;
+            background: #242424;
+            transform: scale(0.98);
         }
 
         .logo-link img {
-            max-width: 280px;
-            max-height: 180px;
+            max-width: 450px;
+            max-height: 300px;
             width: auto;
             height: auto;
             display: block;
+            object-fit: contain;
         }
 
-        /* Landscape (primary touchscreen orientation) */
-        @media (min-width: 1200px) {
+        /* Landscape orientation */
+        @media (min-width: 1200px) and (orientation: landscape) {
             main {
+                flex-direction: row;
                 gap: 4rem;
             }
 
+            .logo-link {
+                max-width: 500px;
+                aspect-ratio: auto;
+            }
+
             .logo-link img {
-                max-width: 320px;
-                max-height: 200px;
+                max-width: 350px;
+                max-height: 250px;
             }
         }
 
-        /* Tablet and smaller */
-        @media (max-width: 1199px) {
+        /* Tablet landscape */
+        @media (max-width: 1199px) and (orientation: landscape) {
             main {
+                flex-direction: row;
                 gap: 2rem;
             }
 
             .logo-link {
                 padding: 2rem;
+                max-width: 400px;
             }
 
             .logo-link img {
-                max-width: 240px;
-                max-height: 150px;
+                max-width: 280px;
+                max-height: 200px;
             }
         }
 
-        /* Mobile / Portrait orientation */
-        @media (max-width: 768px) {
+        /* Portrait orientation (primary for tablet) */
+        @media (orientation: portrait) {
             main {
                 flex-direction: column;
                 gap: 2.5rem;
                 padding: 2rem;
             }
 
-            .company {
-                width: 100%;
-            }
-
             .logo-link {
-                width: 100%;
-                max-width: 320px;
-                padding: 2rem;
+                padding: 2.5rem;
+                max-width: 100%;
+                aspect-ratio: 1.2;
             }
 
             .logo-link img {
-                max-width: 200px;
-                max-height: 130px;
+                max-width: 350px;
+                max-height: 220px;
             }
         }
 
         /* Respect user's motion preferences */
         @media (prefers-reduced-motion: reduce) {
             .logo-link {
-                transition: none;
+                transition: background-color 0.15s ease;
+            }
+
+            .logo-link:hover {
+                transform: none;
+            }
+
+            .logo-link:active {
+                transform: none;
             }
         }
 
         /* Touch device optimization */
         @media (hover: none) {
             .logo-link {
-                background: #f0f0f0;
+                background: #252525;
             }
 
             .logo-link:active {
-                background: #e0e0e0;
+                background: #1f1f1f;
             }
         }
     </style>
