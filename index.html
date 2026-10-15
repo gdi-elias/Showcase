@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access Garnes and Clinitech">
+    <title>Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            color: #2c3e50;
+        }
+
+        main {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            padding: 3rem;
+        }
+
+        .company {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem;
+            background: #f8f8f8;
+            border-radius: 16px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.15s ease, outline 0.15s ease;
+            border: 2px solid transparent;
+        }
+
+        .logo-link:hover {
+            background: #efefef;
+        }
+
+        .logo-link:focus {
+            outline: 3px solid #2c3e50;
+            outline-offset: 6px;
+        }
+
+        .logo-link:active {
+            background: #e8e8e8;
+        }
+
+        .logo-link img {
+            max-width: 280px;
+            max-height: 180px;
+            width: auto;
+            height: auto;
+            display: block;
+        }
+
+        /* Landscape (primary touchscreen orientation) */
+        @media (min-width: 1200px) {
+            main {
+                gap: 4rem;
+            }
+
+            .logo-link img {
+                max-width: 320px;
+                max-height: 200px;
+            }
+        }
+
+        /* Tablet and smaller */
+        @media (max-width: 1199px) {
+            main {
+                gap: 2rem;
+            }
+
+            .logo-link {
+                padding: 2rem;
+            }
+
+            .logo-link img {
+                max-width: 240px;
+                max-height: 150px;
+            }
+        }
+
+        /* Mobile / Portrait orientation */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+                gap: 2.5rem;
+                padding: 2rem;
+            }
+
+            .company {
+                width: 100%;
+            }
+
+            .logo-link {
+                width: 100%;
+                max-width: 320px;
+                padding: 2rem;
+            }
+
+            .logo-link img {
+                max-width: 200px;
+                max-height: 130px;
+            }
+        }
+
+        /* Respect user's motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            .logo-link {
+                transition: none;
+            }
+        }
+
+        /* Touch device optimization */
+        @media (hover: none) {
+            .logo-link {
+                background: #f0f0f0;
+            }
+
+            .logo-link:active {
+                background: #e0e0e0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="company">
+            <a href="https://garnes.is" class="logo-link" aria-label="Visit Garnes website">
+                <img src="Assets/Header-Main_Garnes.png" alt="Garnes">
+            </a>
+        </div>
+
+        <div class="company">
+            <a href="https://clinitech.no" class="logo-link" aria-label="Visit Clinitech website">
+                <img src="Assets/Clinitech_logo_RGB (2).png" alt="Clinitech">
+            </a>
+        </div>
+    </main>
+</body>
+</html>
